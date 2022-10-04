@@ -1,0 +1,7 @@
+{
+	"parser": "babel-eslint",
+	// "extends": ["eslint/recommended", "prettier"],
+	"rules": {
+		"import/no_name_unused_var": 0
+	}
+}

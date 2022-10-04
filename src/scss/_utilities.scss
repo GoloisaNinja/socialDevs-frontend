@@ -1,0 +1,235 @@
+// Text Styles
+
+.x-large {
+  font-size: 5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1.6rem;
+}
+.large {
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1.6rem;
+}
+.lead {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.6rem;
+}
+@media (max-width: 70rem) {
+  .x-large {
+    font-size: 3.6rem;
+  }
+  .large {
+    font-size: 3rem;
+  }
+  .lead {
+    font-size: 1.5rem;
+  }
+}
+.text-primary {
+  color: $primary-color;
+}
+.text-light {
+  color: $light-color;
+}
+.text-dark {
+  color: $dark-color;
+}
+.text-danger {
+  color: $danger-color;
+}
+.text-success {
+  color: $success-color;
+}
+.text-white {
+  color: $white-color;
+}
+// Alerts
+
+.alert {
+  padding: 1rem;
+  margin: 2rem 0;
+  opacity: 0.9;
+  background: $light-color;
+  color: #333;
+
+  &.alert-primary {
+    @include set-background($primary-color);
+  }
+  &.alert-dark {
+    @include set-background($dark-color);
+  }
+  &.alert-success {
+    @include set-background($success-color);
+  }
+  &.alert-danger {
+    @include set-background($danger-color);
+  }
+}
+
+// Backgrounds
+
+.bg {
+  &-primary {
+    @include set-background($primary-color);
+  }
+  &-light {
+    @include set-background($light-color);
+    border: #ccc 1px solid;
+  }
+  &-dark {
+    @include set-background($dark-color);
+  }
+  &-danger {
+    @include set-background($danger-color);
+  }
+  &-success {
+    @include set-background($success-color);
+  }
+  &-white {
+    @include set-background($white-color);
+    border: #ccc 1px solid;
+  }
+}
+
+// Buttons
+
+.btn,
+.btn-dash {
+  display: inline-block;
+  background: $light-color;
+  color: #333;
+  padding: 0.6rem 2rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  margin-right: 0.8rem;
+  outline: none;
+  transition: opacity 0.2s ease-in;
+
+  &.btn-primary {
+    @include set-background($primary-color);
+    &:hover {
+      background: lighten($primary-color, 5%);
+    }
+  }
+  &.btn-dark {
+    @include set-background($dark-color);
+    &:hover {
+      background: lighten($dark-color, 5%);
+    }
+  }
+  &.btn-success {
+    @include set-background($success-color);
+    &:hover {
+      background: lighten($success-color, 5%);
+    }
+  }
+  &.btn-danger {
+    @include set-background($danger-color);
+    &:hover {
+      background: lighten($danger-color, 5%);
+    }
+  }
+  &:hover {
+    background: lighten($dark-color, 20%);
+    color: #fff;
+  }
+}
+
+.dark-overlay {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+// Input Label Floating Utils
+.form-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.float-label {
+  position: absolute;
+  top: 0;
+  padding: 0.7rem 0 0 1rem;
+  transition: all 250ms;
+  opacity: 0.65;
+  font-size: 1.4rem;
+}
+
+.float-input:focus + .float-label,
+.float-input:valid + .float-label {
+  font-size: 75%;
+  transform: translate3d(0, -100%, 0);
+  opacity: 1;
+}
+
+// Container
+
+.container {
+  max-width: $max-width;
+  overflow: hidden;
+  margin: auto;
+  padding: 0 1.6rem;
+  margin-top: 2rem;
+  height: 100%;
+}
+
+// Images
+
+.round-img {
+  border-radius: 50%;
+}
+
+// Line
+
+.line {
+  height: 1px;
+  background: #ccc;
+  margin: 2.4rem 0;
+}
+
+// GitHub Badges
+
+.badge {
+  font-size: 1.2rem;
+  padding: 0.16rem;
+  text-align: center;
+  margin: 0.48rem;
+  background: $light-color;
+  color: #333;
+
+  &.badge-primary {
+    @include set-background($primary-color);
+  }
+  &.badge-dark {
+    @include set-background($dark-color);
+  }
+  &.badge-success {
+    @include set-background($success-color);
+  }
+  &.badge-danger {
+    @include set-background($danger-color);
+  }
+  &.badge-white {
+    @include set-background($white-color);
+  }
+}
+
+// Table Styles
+
+.table {
+  th,
+  td {
+    padding: 1.2rem;
+    text-align: left;
+  }
+  th {
+    background: $light-color;
+  }
+}

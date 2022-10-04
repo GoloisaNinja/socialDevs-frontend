@@ -1,0 +1,26 @@
+// Landing page
+
+.landing {
+  position: relative;
+  background: url('../img/devConnect4.jpg') no-repeat center center/cover;
+  height: calc(100vh - 6.5rem);
+
+  &-inner {
+    color: $white-color;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.secondary {
+  color: $primary-color;
+}
+@media (max-width: 70rem) {
+  .landing {
+    height: calc(100vh - 10.2rem);
+  }
+}

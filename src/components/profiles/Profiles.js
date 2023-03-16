@@ -32,7 +32,7 @@ const Profiles = ({
 									<ProfileItem key={profile._id} profile={profile} />
 								))
 							) : (
-								<h4>Please wait...fetching profiles...</h4>
+								<Spinner />
 							)}
 						</div>
 					</Fragment>

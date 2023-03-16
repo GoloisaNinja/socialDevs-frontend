@@ -47,12 +47,19 @@ export const getAllProfiles = () => async (dispatch) => {
 				'Content-type': 'application/json',
 			},
 		};
-		const body = '';
-		const res = await axios.get(`${baseApi}/api/profiles`, body, config);
-		dispatch({
-			type: GET_PROFILES,
-			payload: res.data,
-		});
+		//const body = '';
+		const res = await axios.get(`${baseApi}/api/profiles`, config);
+		if (res.status === 200) {
+			dispatch({
+				type: GET_PROFILES,
+				payload: res.data,
+			});
+		} else {
+			dispatch({
+				type: PROFILE_ERROR,
+				payload: { msg: res.data.msg, status: res.status },
+			});
+		}
 	} catch (error) {
 		console.log(error);
 		dispatch({
@@ -100,10 +107,9 @@ export const getGitHubRepos = (username) => async (dispatch) => {
 				'Content-type': 'application/json',
 			},
 		};
-		const body = '';
+		//const body = '';
 		const res = await axios.get(
 			`${baseApi}/api/profile/github/${username}`,
-			body,
 			config
 		);
 		dispatch({
